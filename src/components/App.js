@@ -5,6 +5,7 @@ import './../styles/App.css';
 const App = () => {
   const [fetchData, setFetchData] = useState('')
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState('')
 
   useEffect(() => {
 
@@ -14,12 +15,17 @@ const App = () => {
       setFetchData(JSON.stringify(data, null,2))
       setLoading(false)
     })
-    .catch(error => console.log('An error occured: ',error))
+    .catch(error => {
+      setError(error)
+    })
 
   }, [])
 
   if(loading){
     return <div>Loading...</div>
+  }
+  if(error){
+    return <div>An error occured: {error}</div>
   }
   return (
     <div>
