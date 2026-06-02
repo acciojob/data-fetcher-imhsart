@@ -14,7 +14,7 @@ const App = () => {
       setFetchData(JSON.stringify(data, null,2))
       setLoading(false)
     })
-    .catch(error => console.log(error))
+    .catch(error => console.log('An error occured: ',error))
 
   }, [])
 
