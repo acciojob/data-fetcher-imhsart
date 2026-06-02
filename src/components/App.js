@@ -17,6 +17,7 @@ const App = () => {
     })
     .catch(error => {
       setError(error)
+      setLoading(false)
     })
 
   }, [])
@@ -25,7 +26,7 @@ const App = () => {
     return <div>Loading...</div>
   }
   if(error){
-    return <div>An error occured: {error}</div>
+    return <div>An error occurred: {error}</div>
   }
   return (
     <div>
