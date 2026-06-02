@@ -11,7 +11,7 @@ const App = () => {
     fetch('https://dummyjson.com/products')
     .then(res => res.json())
     .then(data => {
-      setFetchData(JSON.stringify(data))
+      setFetchData(JSON.stringify(data, null,2))
       setLoading(false)
     })
     .catch(error => console.log(error))
